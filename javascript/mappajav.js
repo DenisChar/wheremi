@@ -12,7 +12,7 @@ function init() {
 // The overlay layer for our marker, with a simple diamond as symbol	BOOOOOOOO
    	var overlay = new OpenLayers.Layer.Vector('Overlay', {
         styleMap: new OpenLayers.StyleMap({
-            externalGraphic: '../img/marker.png',
+            externalGraphic: 'https://cdn1.iconfinder.com/data/icons/Map-Markers-Icons-Demo-PNG/256/Map-Marker-Marker-Outside-Azure.png',
             graphicWidth: 20, graphicHeight: 24, graphicYOffset: -24,
             title: '${tooltip}'
         })
@@ -23,10 +23,10 @@ function init() {
 
 	var myLocation = new OpenLayers.Geometry.Point(lon, lat)
 	.transform('EPSG:4326', 'EPSG:3857');
-	
+
 	var myLocation1 = new OpenLayers.Geometry.Point(lon1, lat1)	// N.2
 	.transform('EPSG:4326', 'EPSG:3857');
-	
+
 // We add the marker with a tooltip text to the overlay		NEANCHE QUESTO
 
 	overlay.addFeatures([
@@ -39,7 +39,7 @@ function init() {
 
 // A popup with some information about our location	VOTO DIESCI
 
-	var popup = new OpenLayers.Popup.FramedCloud("Popup", 
+	var popup = new OpenLayers.Popup.FramedCloud("Popup",
 	myLocation.getBounds().getCenterLonLat(), null,
 	'We could be here.<br>Or elsewhere.', null,
 	true // <-- true if we want a close (X) button, false otherwise
@@ -58,7 +58,7 @@ function init() {
 				new OpenLayers.Control.PanZoomBar(),
 				new OpenLayers.Control.ScaleLine(),
 				new OpenLayers.Control.Permalink('permalink'),
-				new OpenLayers.Control.MousePosition(),                    
+				new OpenLayers.Control.MousePosition(),
 				new OpenLayers.Control.Attribution()
 					],
 			maxExtent: new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34),
@@ -70,7 +70,7 @@ function init() {
             } );
 
 
-// TRACK	// Define the map layer				
+// TRACK	// Define the map layer
 			// Here we use a predefined layer that will be kept up to date with URL changes
 			layerMapnik = new OpenLayers.Layer.OSM.Mapnik("Mapnik");
 			map.addLayer(layerMapnik);
@@ -80,7 +80,8 @@ function init() {
 			map.addLayer(layerMarkers);
 
 			// Add the Layer with the GPX Track
-			var lgpx = new OpenLayers.Layer.Vector("Descrizione del layer", {
+			var lgpx = new OpenLayers.Layer.Vector("Descrizione del layer"
+			/*, {
 				strategies: [new OpenLayers.Strategy.Fixed()],
 				protocol: new OpenLayers.Protocol.HTTP({
 					src: "www.site181943.tw.cs.unibo.it/traccia.gpx",
@@ -88,7 +89,7 @@ function init() {
 				}),
 				style: {strokeColor: "green", strokeWidth: 30, strokeOpacity: 1},
 				projection: new OpenLayers.Projection("EPSG:4326")
-			});
+			}*/);
 			map.addLayer(lgpx);
 
 			var lonLat = new OpenLayers.LonLat(lon, lat).transform(new OpenLayers.Projection("EPSG:4326"), map.getProjectionObject());
@@ -100,7 +101,7 @@ function init() {
 			layerMarkers.addMarker(new OpenLayers.Marker(lonLat,icon));
 
 // MARKER 2
-	
+
 			var lonLat1 = new OpenLayers.LonLat(lon1, lat1).transform(new OpenLayers.Projection("EPSG:4326"), map.getProjectionObject());
 			map.setCenter(lonLat1, zoom);
 			var size1 = new OpenLayers.Size(21,25);

@@ -13,17 +13,23 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <!-- Youtube and media js-->
-    <script type = "text/javascript" src="MediaJav.js"></script>
+
+    <script type = "text/javascript" src="../javascript/MediaJav.js"></script>
+
     <!-- OSM script -->
     <script src="https://www.openlayers.org/api/OpenLayers.js"></script>
     <script src="https://www.openstreetmap.org/openlayers/OpenStreetMap.js"></script>
-    <script type = "text/javascript" src="MapJav.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/openlocationcode/latest/openlocationcode.js" ></script>
+    <script src="https://cdn.jsdelivr.net/openlocationcode/latest/openlocationcode.min.js" ></script>
+
+    <script src="../javascript/mappajav.js"></script>
 
     <title>Where M I?</title>
 
   </head>
 
-  <body class="bg-dark" onload= "init();" >
+  <body onload="init();" class="bg-dark" >
 
     <!-- Navbar Menu-->
     <nav class="navbar navbar-expand-md sticky-top navbar-light bg-warning fixed-top">
@@ -57,14 +63,23 @@
     <div class="container">
   <div class="row justify-content-center">
     <!-- Map Placeholder-->
-    <div class="w-100 h-100 "id = "map"></div>
+    <span style="font-family: Arial; font-weight: bold;">Esempio di mappa OSM</span>
+
+    <div id="map" class="" style="width:200px; height:200px;"></div>
+
+    <!--<div id="navbar"><span>Red Stapler - Geolocation API</span></div>
+      <div id="wrapper">
+        <button id="location-button">Get User Location</button>
+        <div id="output"></div>
+      </div>-->
 
   </div>
   <div class="row justify-content-center">
-    <!-- Ehere M I Button-->
+    <!-- Where M I Button-->
     <button type="button" class="btn btn-warning btn-lg btn-block m-2">Where M I?</button>
 
   </div>
+
   <div class="row justify-content-center">
   <!-- Placeholder for Yt video hidden to play only audio-->
 
@@ -74,6 +89,7 @@
         </div>
     </div>
   </div>
+
  <!-- Card for places-->
   <div class="card bg-dark text-white w-75">
     <img src="https://images-3662.kxcdn.com/fidelitynews/wp-content/uploads/sites/9/2014/11/Piazza-Anfiteatro-a-Lucca-53074-24711497.jpg" class="card-img" alt="...">
@@ -109,8 +125,7 @@
 
   </div>
 </div>
-
-
+</div>
 
 
   </body>

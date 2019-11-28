@@ -28,8 +28,7 @@ function onPlayerReady(event) {
 
 
 function onPlayerStateChange(event) {
- var n = parseInt(document.getElementById('count').innerHTML);
- document.getElementById('count').innerHTML = n + 1;
+  //----------------------------------------------TO DO
   }
 
 function stopVideo() {
