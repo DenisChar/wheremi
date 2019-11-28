@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags for Bootstrap -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- Youtube and media js-->
+    <script type = "text/javascript" src="MediaJav.js"></script>
+    <!-- OSM script -->
+    <script src="https://www.openlayers.org/api/OpenLayers.js"></script>
+    <script src="https://www.openstreetmap.org/openlayers/OpenStreetMap.js"></script>
+    <script type = "text/javascript" src="MapJav.js"></script>
+
+    <title>Where M I?</title>
+
+  </head>
+
+  <body class="bg-dark" onload= "init();" >
+
+    <!-- Navbar Menu-->
+    <nav class="navbar navbar-expand-md sticky-top navbar-light bg-warning fixed-top">
+  <a class="navbar-brand" href="#">Where M I?</a>
+  <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="navbar-collapse collapse" id="navbarsExampleDefault" style="">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Log in <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">cose</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Preferences</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+    </ul>
+
+  </div>
+    </nav>
+
+    <!-- Layout COntainer-->
+    <div class="container">
+  <div class="row justify-content-center">
+    <!-- Map Placeholder-->
+    <div class="w-100 h-100 "id = "map"></div>
+
+  </div>
+  <div class="row justify-content-center">
+    <!-- Ehere M I Button-->
+    <button type="button" class="btn btn-warning btn-lg btn-block m-2">Where M I?</button>
+
+  </div>
+  <div class="row justify-content-center">
+  <!-- Placeholder for Yt video hidden to play only audio-->
+
+   <div style="position:relative;width:-267px;height:-25px;overflow:hidden;">
+      <div style="position:absolute;top:-276px;left:-5px">
+        <div id="player" >
+        </div>
+    </div>
+  </div>
+ <!-- Card for places-->
+  <div class="card bg-dark text-white w-75">
+    <img src="https://images-3662.kxcdn.com/fidelitynews/wp-content/uploads/sites/9/2014/11/Piazza-Anfiteatro-a-Lucca-53074-24711497.jpg" class="card-img" alt="...">
+    <div class="card-img-overlay">
+      <h5 class="card-title">Piazza Anfiteatro</h5>
+    </div>
+  </div>
+
+
+  </div>
+
+  <div class="row justify-content-center">
+  <!-- Media Buttons-->
+    <div class="btn-group btn-group-lg btn-block m-2" role="group" aria-label="Play Commands">
+
+  <button type="button" class="btn btn-warning" onclick="pause()">Pause</button>
+  <button type="button" class="btn btn-warning" onclick="back5sec()"> -5s </button>
+  <button type="button" class="btn btn-warning" onclick="frwd5sec()"> +5s </button>
+  <button type="button" class="btn btn-warning" onclick="play()">Play</button>
+
+    </div>
+
+
+  <div class="row justify-content-center w-100">
+    <!-- Nvigation Buttons-->
+    <div class="btn-group btn-group-lg btn-block m-2" role="group" aria-label="Skip Commands">
+
+  <button type="button" class="btn btn-warning">Prev</button>
+  <button type="button" class="btn btn-warning">More</button>
+  <button type="button" class="btn btn-warning">Next</button>
+
+    </div>
+
+  </div>
+</div>
+
+
+
+
+  </body>
+</html>
