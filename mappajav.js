@@ -1,5 +1,3 @@
-<script type="text/javascript">
-
 // Posizione iniziale della mappa
 	var lat=44.355;
 	var lon=11.71;
@@ -141,5 +139,3 @@ var mapnik = new OpenLayers.Layer.OSM("OpenStreetMap (Mapnik)");
 // *POI's
 
 		}	// GRAFFA che chiude la funzione
-
-</script>
